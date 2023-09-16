@@ -3,6 +3,8 @@ let myName = "vipin";
 let meaningOfLife;
 let isLife;
 let album;
+let isActive;
+let re = /\w+/g;
 myName = "VJ";
 meaningOfLife = 42;
 isLife = true;

@@ -2,6 +2,8 @@ let myName: string = "vipin";
 let meaningOfLife: number;
 let isLife: boolean;
 let album: any;
+let isActive: boolean | number;
+let re: RegExp = /\w+/g;
 
 myName = "VJ";
 meaningOfLife = 42;
