@@ -30,3 +30,38 @@ const add = (a: number, b: number): number => {
 const log = (message: any): void => {
   console.log(message);
 };
+
+const subtract = function (a: number, b: number): number {
+  return a - b;
+};
+
+//type
+type mathFunction = (a: number, b: number) => number;
+//interface
+// interface mathFunction {
+//   (a: number, b: number): number;
+// }
+let multiply: mathFunction = function (c, d) {
+  return c * d;
+};
+
+log(multiply(2, 2));
+
+//type guard, optional parameter
+//part1
+const addAll = (a: number, b: number, c?: number): number => {
+  if (typeof c !== "undefined") {
+    return a + b + c;
+  } else {
+    return a + b;
+  }
+};
+//part2
+const addAll2 = (a: number, b: number, c: number = 2): number => {
+  return a + b + c;
+};
+
+log(addAll(2, 2));
+log(addAll(2, 2, 2));
+log(addAll2(2, 2));
+log(addAll2(2, 2, 2));
