@@ -57,11 +57,12 @@ const addAll = (a: number, b: number, c?: number): number => {
   }
 };
 //part2
-const addAll2 = (a: number, b: number, c: number = 2): number => {
+const sumAll = (a: number = 10, b: number, c: number = 2): number => {
   return a + b + c;
 };
 
 log(addAll(2, 2));
 log(addAll(2, 2, 2));
-log(addAll2(2, 2));
-log(addAll2(2, 2, 2));
+log(sumAll(2, 2));
+log(sumAll(2, 2, 2));
+log(sumAll(undefined, 2));
