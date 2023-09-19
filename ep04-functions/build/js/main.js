@@ -49,3 +49,34 @@ log(sumAll(2, 2));
 log(sumAll(2, 2, 2));
 //we have to pass undefined because
 log(sumAll(undefined, 2));
+//Rest parameters means (rest of the parameters)
+const total = (...nums) => {
+    return nums.reduce((prev, curr) => prev + curr);
+};
+//didn't send the array but it will represent it as array
+log(total(1, 2, 3, 4, 5));
+//never type, when we explicitely throw error
+const createError = (errMsg) => {
+    throw new Error(errMsg);
+};
+//without check type was never , with check it becomes void
+const infinite = () => {
+    let i = 1;
+    while (true) {
+        i++;
+        if (i > 100)
+            break;
+    }
+};
+//custom typeguard
+const isNumber = (value) => {
+    return typeof value === "number" ? true : false;
+};
+//undefined return or use of the never type
+const numberOrString = (value) => {
+    if (typeof value === "string")
+        return "string";
+    if (isNumber(value))
+        return "number";
+    return createError("This should never happen!");
+};
