@@ -65,4 +65,5 @@ log(addAll(2, 2));
 log(addAll(2, 2, 2));
 log(sumAll(2, 2));
 log(sumAll(2, 2, 2));
+//we have to pass undefined because
 log(sumAll(undefined, 2));
