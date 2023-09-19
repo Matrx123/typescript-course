@@ -40,10 +40,12 @@ const addAll = (a, b, c) => {
     }
 };
 //part2
-const addAll2 = (a, b, c = 2) => {
+const sumAll = (a = 10, b, c = 2) => {
     return a + b + c;
 };
 log(addAll(2, 2));
 log(addAll(2, 2, 2));
-log(addAll2(2, 2));
-log(addAll2(2, 2, 2));
+log(sumAll(2, 2));
+log(sumAll(2, 2, 2));
+//we have to pass undefined because
+log(sumAll(undefined, 2));
