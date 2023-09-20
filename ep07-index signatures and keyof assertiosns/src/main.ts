@@ -37,6 +37,7 @@ console.log(todaysNet(todaysTransaction));
 
 //can also be done, but pizza, books and job are required
 interface newInterface {
+  //index signature
   readonly [index: string]: number;
   pizza: number;
   books: number;
