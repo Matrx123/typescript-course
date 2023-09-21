@@ -1,3 +1,3 @@
 # typescript-course
 
-Beginer course on typescript, follow all folders.
+Fundamentals of typescript, clone this repo and play with it.
