@@ -75,3 +75,49 @@ const gradeData: Record<Students, Grades> = {
   kelly: { assign1: 90, assign2: 95 },
   sara: { assign1: 87, assign2: 98 },
 };
+///////////////////////////////////////////////////////////////////////////
+//Returntype
+
+// type NewAssign = { title: string; points: number };
+const createNewAssign = (title: string, points: number) => {
+  return {
+    title,
+    points,
+  };
+};
+//but what if we dont have newAssign Type, so lets comment it and remove the return type from createNewAssign, it will throw error.
+//fix
+type NewAssign = ReturnType<typeof createNewAssign>;
+//now its type is same as return of createNewAssign
+//usefull in function which changes return type so it will dynamically change the return type for the dependents as well
+//practical use
+
+const tsAssign: NewAssign = createNewAssign("utility types", 100);
+///////////////////////////////////////////////////////////////////////////
+//Parameter type
+type AssignParams = Parameters<typeof createNewAssign>;
+const assignArgs: AssignParams = ["Generics", 100];
+const tsAssign2: NewAssign = createNewAssign(...assignArgs);
+///////////////////////////////////////////////////////////////////////////
+//newer utility type
+//Awaited - helps us with the return type of the promises
+
+interface User {
+  id: number;
+  name: string;
+  userName: string;
+  email: string;
+}
+
+const fetchUsers = async (): Promise<User[]> => {
+  const data = await fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      if (err instanceof Error) console.log(err.message);
+    });
+  return data;
+};
+type fetchUsersReturnType = Awaited<ReturnType<typeof fetchUsers>>;
+fetchUsers().then((users) => console.log(users));
